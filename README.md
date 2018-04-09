@@ -7,6 +7,8 @@ Some more extensive script templates for C# development.
   **PC:** "C:\Program Files\Unity\Editor\Data\Resources\ScriptTemplates" (or similar)
   
   **MAC:** /Applications/Unity/Unity.app/Contents/Resources/ScriptTemplates/ (or similar)
+
+  **Linux:** /opt/Unity/Editor/Data/Resources/ScriptTemplates
   
   *Note: do not change the ".cs.txt" extension.* 
   
@@ -42,3 +44,15 @@ A completely empty .cs file. Useful for quickly creating a very custom code file
 
 ### 85-CustomEditor-NewBehaviourScript.cs.txt
 A subclass of the UnityEditor.Editor class that is used for making custom inspectors for classes.
+
+## Templates name format
+
+The format is:
+
+**{SortingIndex}**-**{MenuItemName}**-**{FileName}**.txt
+
+**{SortingIndex}** is some number used to order the items in the "Create New" context menu, duplicates are allowed.
+
+**{MenuItemName}** is a string that defines the name of the item. It can be a nested item, use double underscores "__" to indicate going into a folder, sorta like with the [CreateAssetMenu] attribute, except in that one they use forward slash "/" instead. A bit confusing.
+
+**{FileName}** is the default suggested filename that Unity has highlighted, when the user clicks the menu item to create the file. As @djfunkey mentioned, there seems to be some additional magic string searches going on for the filename. If the string "Test" appears in the filename (case insensitive), Unity will automatically create and move the new file to an Editor folder, in the current directory.
