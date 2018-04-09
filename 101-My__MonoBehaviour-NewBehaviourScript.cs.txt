@@ -1,0 +1,20 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+namespace Game
+{
+    public class #SCRIPTNAME# : MonoBehaviour
+    {
+#pragma warning disable 0649 // The "Never assigned to" warning.
+    
+#pragma warning restore 0649
+
+        void Start()
+        {
+        }
+
+        void Update()
+        {
+        }
+    }
+}
