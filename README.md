@@ -46,7 +46,7 @@ A completely empty .cs file. Useful for quickly creating a very custom code file
 A subclass of the UnityEditor.Editor class that is used for making custom inspectors for classes.
 
 ## Templates name format
-
+[source](https://answers.unity.com/questions/635684/add-additional-script-templates.html)
 The format is:
 
 **{SortingIndex}**-**{MenuItemName}**-**{FileName}**.txt
@@ -55,4 +55,4 @@ The format is:
 
 **{MenuItemName}** is a string that defines the name of the item. It can be a nested item, use double underscores "__" to indicate going into a folder, sorta like with the [CreateAssetMenu] attribute, except in that one they use forward slash "/" instead. A bit confusing.
 
-**{FileName}** is the default suggested filename that Unity has highlighted, when the user clicks the menu item to create the file. As @djfunkey mentioned, there seems to be some additional magic string searches going on for the filename. If the string "Test" appears in the filename (case insensitive), Unity will automatically create and move the new file to an Editor folder, in the current directory.
+**{FileName}** is the default suggested filename that Unity has highlighted, when the user clicks the menu item to create the file. There seems to be some additional magic string searches going on for the filename. If the string "Test" appears in the filename (case insensitive), Unity will automatically create and move the new file to an Editor folder, in the current directory.
