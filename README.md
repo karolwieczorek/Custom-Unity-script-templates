@@ -47,6 +47,7 @@ A subclass of the UnityEditor.Editor class that is used for making custom inspec
 
 ## Templates name format
 [source](https://answers.unity.com/questions/635684/add-additional-script-templates.html)
+
 The format is:
 
 **{SortingIndex}**-**{MenuItemName}**-**{FileName}**.txt
