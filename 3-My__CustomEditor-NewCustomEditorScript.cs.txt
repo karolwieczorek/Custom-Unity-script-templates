@@ -1,0 +1,35 @@
+using UnityEngine;
+using UnityEditor;
+using Game;
+
+namespace GameEditor
+{
+    [CustomEditor(typeof(#TARGETCLASS#))]
+    public class #SCRIPTNAME# : Editor
+    {
+        #TARGETCLASS# targetObject;
+
+        private void OnEnable()
+        {
+            targetObject = (#TARGETCLASS#)target;
+
+            SceneView.onSceneGUIDelegate -= OnSceneGUI;
+            SceneView.onSceneGUIDelegate += OnSceneGUI;
+        }
+
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+        }
+
+        protected void OnDisable()
+        {
+            SceneView.onSceneGUIDelegate -= OnSceneGUI;
+        }
+
+        protected void OnSceneGUI(SceneView sceneView)
+        {
+            
+        }
+    }
+}
