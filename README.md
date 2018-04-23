@@ -52,6 +52,6 @@ The format is:
 
 ## Special tags:
 
-**"#SCRIPTNAME#"** - Unity asset preprocessor just replaces them with the script filename (without extention) so that’s a nice touch there too. 
+**#SCRIPTNAME#** - Unity asset preprocessor just replaces them with the script filename (without extention) so that’s a nice touch there too. 
 
-**"#NOTRIM#"** - To explain why they are there, in Unity 5.5, tabs were added to some empty lines in the templates for better indentation. The #NOTRIM# text is a special marker used by the template file system to mark lines that end in whitespace, like tabs. They prevent that whitespace from being stripped by our source code tools. The Unity Editor then strips all the markers when the template is used.
+**#NOTRIM#** - To explain why they are there, in Unity 5.5, tabs were added to some empty lines in the templates for better indentation. The #NOTRIM# text is a special marker used by the template file system to mark lines that end in whitespace, like tabs. They prevent that whitespace from being stripped by our source code tools. The Unity Editor then strips all the markers when the template is used.
