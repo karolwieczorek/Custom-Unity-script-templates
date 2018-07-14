@@ -1,4 +1,8 @@
-﻿namespace CustomScriptsTemplateUpdater
+﻿using System.IO;
+using UnityEditor;
+using UnityEngine;
+
+namespace CustomScriptsTemplateUpdater
 {
     public partial class Updater
     {
@@ -17,6 +21,19 @@
 
             protected override void Execute()
             {
+                var path = Path.Combine(Application.dataPath, NEW_TEMPLATES_PATH);
+                var info = new DirectoryInfo(path);
+                var fileInfo = info.GetFiles();
+                foreach (var file in fileInfo)
+                    if (!file.Name.EndsWith(".meta"))
+                        CopyToTemplates(file);
+            }
+
+            static void CopyToTemplates(FileInfo file)
+            {
+                Debug.Log(file.FullName);
+                var newPath = Path.Combine(TemplatesDirectory, file.Name);
+                Debug.Log(newPath);
                 
             }
         }

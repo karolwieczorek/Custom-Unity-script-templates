@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -10,11 +11,11 @@ namespace CustomScriptsTemplateUpdater
 {
     public partial class Updater : EditorWindow
     {
-        const string NEW_TEMPLATES_PATH = "CustomScriptsTemplateUpdater/ScriptTemplates";
+        static readonly string NEW_TEMPLATES_PATH = "CustomScriptsTemplateUpdater" + Path.DirectorySeparatorChar +"ScriptTemplates";
 
         static string TemplatesDirectory
         {
-            get { return EditorApplication.applicationContentsPath + "/Resources/ScritpTemplates"; }
+            get { return Path.Combine(EditorApplication.applicationContentsPath, "Resources" + Path.DirectorySeparatorChar +"ScriptTemplates"); }
         }
 
         bool autoOpen; // TODO make as editor pref with default true
