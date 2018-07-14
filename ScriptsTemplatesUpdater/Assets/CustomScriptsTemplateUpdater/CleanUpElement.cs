@@ -21,6 +21,7 @@ namespace CustomScriptsTemplateUpdater
                 var path = "Assets/" + MAIN_FOLDER;
                 FileUtil.DeleteFileOrDirectory(path);
                 FileUtil.DeleteFileOrDirectory(path + ".meta");
+                AssetDatabase.Refresh();
             }
         }
     }
