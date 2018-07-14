@@ -1,6 +1,5 @@
 ﻿#if UNITY_EDITOR
 
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEditor;
@@ -11,13 +10,15 @@ namespace CustomScriptsTemplateUpdater
 {
     public class Updater : EditorWindow
     {
-        const string newTemplatesPath = "CustomScriptsTemplateUpdater/ScriptTemplates";
+        const string NEW_TEMPLATES_PATH = "CustomScriptsTemplateUpdater/ScriptTemplates";
 
         string TemplatesDirectory
         {
             get { return EditorApplication.applicationContentsPath + "/Resources/ScritpTemplates"; }
         }
 
+        bool autoOpen; // TODO make as editor pref with default true
+        
         bool updateScripts = true;
         bool cleanUp = true;
         bool restart = true;
@@ -26,7 +27,7 @@ namespace CustomScriptsTemplateUpdater
         static void RestartUnity()
         {
             Process.Start(EditorApplication.applicationPath); 
-            Environment.Exit(1);
+            EditorApplication.Exit(0);
         }
 
         [MenuItem("Tools/LogPaths")]
@@ -36,6 +37,7 @@ namespace CustomScriptsTemplateUpdater
             Debug.Log(EditorApplication.applicationContentsPath);
         }
 
+        [MenuItem("Tools/Script Templates Updater")]
         [UnityEditor.Callbacks.DidReloadScripts]
         static void OnScriptsReloaded()
         {
@@ -57,14 +59,21 @@ namespace CustomScriptsTemplateUpdater
                     CleanUpProject();
                 if (restart)
                     RestartUnity();
+
+                return;
             }
+            
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            autoOpen = GUILayout.Toggle(autoOpen, "Auto Open");
+            GUILayout.EndHorizontal();
         }
 
         void DrawDescription()
         {
             updateScripts = GUILayout.Toggle(updateScripts, "UpdateScripts");
             var text = string.Format("Update scripts will copy all templates from \nAssets/{0} \nand paste them to \n{1}",
-                newTemplatesPath, TemplatesDirectory);
+                NEW_TEMPLATES_PATH, TemplatesDirectory);
             GUILayout.Label(text);
             
             GUILayout.Space(10);
