@@ -34,7 +34,7 @@ namespace CustomScriptsTemplateUpdater
                 Debug.Log(file.FullName);
                 var newPath = Path.Combine(TemplatesDirectory, file.Name);
                 Debug.Log(newPath);
-                
+                File.Copy(file.FullName, newPath, true);
             }
         }
     }
