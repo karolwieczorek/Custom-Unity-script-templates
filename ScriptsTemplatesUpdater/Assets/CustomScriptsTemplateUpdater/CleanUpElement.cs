@@ -18,7 +18,9 @@ namespace CustomScriptsTemplateUpdater
 
             protected override void Execute()
             {
-                FileUtil.DeleteFileOrDirectory(MAIN_FOLDER);
+                var path = "Assets/" + MAIN_FOLDER;
+                FileUtil.DeleteFileOrDirectory(path);
+                FileUtil.DeleteFileOrDirectory(path + ".meta");
             }
         }
     }

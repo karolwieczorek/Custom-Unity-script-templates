@@ -54,7 +54,8 @@ namespace CustomScriptsTemplateUpdater
             {
                 foreach (var element in elements)
                     element.TryExecute();
-
+                
+                Close();
                 return;
             }
             
