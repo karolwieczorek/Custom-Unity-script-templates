@@ -11,7 +11,8 @@ namespace CustomScriptsTemplateUpdater
 {
     public partial class Updater : EditorWindow
     {
-        static readonly string NEW_TEMPLATES_PATH = "CustomScriptsTemplateUpdater" + Path.DirectorySeparatorChar +"ScriptTemplates";
+        const string MAIN_FOLDER = "CustomScriptsTemplateUpdater";
+        static readonly string NEW_TEMPLATES_PATH = MAIN_FOLDER + Path.DirectorySeparatorChar +"ScriptTemplates";
 
         static string TemplatesDirectory
         {

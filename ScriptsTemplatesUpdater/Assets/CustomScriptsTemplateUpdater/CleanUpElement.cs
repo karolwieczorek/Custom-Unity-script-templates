@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
 
 namespace CustomScriptsTemplateUpdater
 {
@@ -18,7 +18,7 @@ namespace CustomScriptsTemplateUpdater
 
             protected override void Execute()
             {
-                Debug.Log(Name);
+                FileUtil.DeleteFileOrDirectory(MAIN_FOLDER);
             }
         }
     }
