@@ -2,19 +2,11 @@
 Some more extensive script templates for C# development.
 
 ## Usage
-1. Place the script templates (the .cs.txt files) into the script template folder %EDITOR_PATH%\Data\Resources\ScriptTemplates. Depending on platform it could be:
-
-  **PC:** "C:\Program Files\Unity\Editor\Data\Resources\ScriptTemplates" (or similar)
-  
-  **MAC:** /Applications/Unity/Unity.app/Contents/Resources/ScriptTemplates/ (or similar)
-
-  **Linux:** /opt/Unity/Editor/Data/Resources/ScriptTemplates
-  
-  *Note: do not change the ".cs.txt" extension for c# scripts.* 
-  
-2. Restart Unity if it was open when you added the files to the script template folder.
-3. Right-click in the *Project* window and choose *"Create >"*.
-4. Pick a script template of your choice.
+1. Import Unity Package from Releases tab.Depending on platform it could be:
+2. Follow the editor window instructions.
+![Custom Unity script templates Updater](https://i.imgur.com/tZlNslq.png)
+3. Done. Enjoy your new templates.
+![Custom Unity script templates](https://i.imgur.com/ag3Hlel.png)
   
 ## Templates
 
