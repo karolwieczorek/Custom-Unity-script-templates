@@ -2,10 +2,13 @@
 Some more extensive script templates for C# development.
 
 ## Usage
-1. Import Unity Package from Releases tab.Depending on platform it could be:
+1. Import Unity Package from Releases tab.
 2. Follow the editor window instructions.
+
 ![Custom Unity script templates Updater](https://i.imgur.com/tZlNslq.png)
+
 3. Done. Enjoy your new templates.
+
 ![Custom Unity script templates](https://i.imgur.com/ag3Hlel.png)
   
 ## Templates
